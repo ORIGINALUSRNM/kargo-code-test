@@ -1,8 +1,16 @@
 <!DOCTYPE html>
-<html>
-	<head></head>
+<html ng-app="kargo">
+	<head>
+		<title>Kargo Code Test</title>
+		<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css"
+	</head>
 	<body>
 		Hello Kargo!
 		I am here.
+		<input ng-model="name" />
+		<h3>{{name}}</h3>
+		<script src="angular/angular.js"></script>
+		<script src="angular-ui-router/build/angular-ui-router.js"></script>
+		<script src="app.js"></script>
 	</body>
 </html>

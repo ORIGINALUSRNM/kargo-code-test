@@ -7,6 +7,7 @@ app.get('/', function (req, res) {
 });
 
 app.use(express.static('src'));
+app.use(express.static('node_modules'));
 
 var server = app.listen(3000, function () {
 	var port = server.address().port;
