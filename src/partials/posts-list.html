@@ -1,0 +1,6 @@
+<ul>
+	<li class="well" ng-repeat="post in postsList.posts">
+		<em>{{post.id}} - {{post.title}}</em>
+		<button class="btn btn-primary" ng-click="postsList.showDetails(post.id)">details</button>
+	</li>
+</ul>
