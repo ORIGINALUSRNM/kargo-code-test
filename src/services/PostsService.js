@@ -49,6 +49,7 @@ angular.module('kargo')
 		};
 
 		return {
+			get: get,
 			getAll: getAll
 		};
 

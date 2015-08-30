@@ -15,16 +15,11 @@ angular.module('kargo', ['ui.router'])
 		$stateProvider
 			.state('postsList', {
 				url: '/',
-				//controller: 'PostsListController',
-				//controllerAs: 'postsList',
 				template: '<posts-list></posts-list>'
-				//templateUrl: 'partials/posts-list.html'
 			})
 			.state('postDetail', {
 				url: '/:postId',
-				controller: function ($scope, $stateParams) {
-					$scope.id = $stateParams.postId;
-				},
+				controller: 'PostDetailsController',
 				templateUrl: 'partials/post-details.html'
 			});
 	});
