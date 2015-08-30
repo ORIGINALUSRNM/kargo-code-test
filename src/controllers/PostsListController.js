@@ -4,16 +4,16 @@ angular.module('kargo')
 
 		var postsList = this;
 
-		PostsService.getAll().then(function (data) {
-
-			postsList.data = data;
-
-		});
+		PostsService.getAll().then(
+			function (data) {
+				postsList.data = data;
+			},
+			function (error) {
+				
+			}
+		);
 
 		postsList.showDetails = function (postId) {
-
 			$state.go('postDetail', { postId: postId });
-
 		};
-
 	}]);

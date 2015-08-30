@@ -6,45 +6,50 @@ angular.module('kargo')
 			posts: []
 		};
 
-		var add = function () {
-			//Test function to make sure service is properly working and users of this service update
-			var posts = data.posts;
-			var newId = posts[posts.length - 1].id + 1;
+		var get = function (postId) {
+			///////////
+			//not caching individual posts because want user to always have most updated data.
+			//if posts could never be edited or deleted, then caching would make sense here ( not sure 
+			//if posts can be edited or delted )
+			///////////
+			var postDetail = $q.defer();
 
-			posts.push({ 
-				id: newId,
-				title: new Date()
-			});
-
-			data.posts = posts;
+			$http.get(POSTS_URL + '/' + postId)
+				.then(
+					function (response) {
+						postDetail.resolve(response);
+					},
+					function (response) {
+						postDetail.reject(response);
+					}
+				);
+			return postDetail.promise;
 		};
 
 		var getAll = function () {
-
 			var posts = $q.defer();
-			
 			///////////
 			//jsonplaceholder api set to allow all origins so no cross origin issues.
 			///////////
-			$http.get('http://jsonplaceholder.typicode.com/posts')
+			$http.get(POSTS_URL)
 				.then(
 					function (response) {
 						data.posts = response.data;
 						posts.resolve(data);
 					}, 
 					function (response) {
-						debugger;
+						///////////////
+						//if error is encountered leave posts cached data alone 
+						//but reject with error response so UI may alert user - not yet implemented.
+						///////////////
+						posts.reject(response);
 					}
 				);
-
 			return posts.promise
-
 		};
 
 		return {
-
-			add: add,
 			getAll: getAll
-
 		};
+
 	}]);

@@ -1,6 +1,6 @@
 angular.module('kargo', ['ui.router'])
 
-	.constant('POSTS_URL', '/posts')
+	.constant('POSTS_URL', 'http://jsonplaceholder.typicode.com/posts')
 
 	.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
 
@@ -15,9 +15,10 @@ angular.module('kargo', ['ui.router'])
 		$stateProvider
 			.state('postsList', {
 				url: '/',
-				controller: 'PostsListController',
-				controllerAs: 'postsList',
-				templateUrl: 'partials/posts-list.html'
+				//controller: 'PostsListController',
+				//controllerAs: 'postsList',
+				template: '<posts-list></posts-list>'
+				//templateUrl: 'partials/posts-list.html'
 			})
 			.state('postDetail', {
 				url: '/:postId',
