@@ -1,10 +1,7 @@
 <div class="container-fluid">
-	<div class="row" ng-repeat="post in postsList.data.posts">
-		<div class="col-md-8">
+	<div class="row" ng-repeat="post in postsList.data.posts" ng-click="postsList.showDetails(post.id)">
+		<div class="col-md-12">
 			<em>{{post.id}} - {{post.title}}</em>
-		</div>
-		<div class="col-md-4">
-			<button class="btn btn-primary" ng-click="postsList.showDetails(post.id)">details</button>
 		</div>
 	</div>
 </div>

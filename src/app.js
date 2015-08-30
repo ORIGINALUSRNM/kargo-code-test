@@ -25,6 +25,6 @@ angular.module('kargo', ['ui.router'])
 				controller: function ($scope, $stateParams) {
 					$scope.id = $stateParams.postId;
 				},
-				template: '<p>postDetail for post: {{ id }}'
+				templateUrl: 'partials/post-details.html'
 			});
 	});
