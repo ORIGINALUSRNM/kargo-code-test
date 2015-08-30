@@ -2,6 +2,8 @@ angular.module('kargo', ['ui.router'])
 
 	.constant('POSTS_URL', 'http://jsonplaceholder.typicode.com/posts')
 
+	.constant('TRACKER_URL', 'http://kargotest.herokuapp.com/api/trackers?from={{fromDate}}&to={{toDate}}')
+
 	.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
 
 		////////////////

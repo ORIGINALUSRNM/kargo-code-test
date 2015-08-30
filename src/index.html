@@ -3,15 +3,18 @@
 	<head>
 		<title>Kargo Code Test</title>
 		<!-- <base href="/src/index.html" /> -->
-		<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css"
+		<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="resources/main.css" />
 	</head>
 	<body>
-		<section ui-view></section>
+		<section class="kargo-main" ui-view></section>
 		<script src="angular/angular.js"></script>
 		<script src="angular-ui-router/build/angular-ui-router.js"></script>
+		<script src="angular-mocks/angular-mocks.js"></script>
 		<script src="app.js"></script>
 		<script src="controllers/PostsListController.js"></script>
 		<script src="services/PostsService.js"></script>
+		<script src="services/TrackerService.js"></script>
 		<script src="directives/postsList.js"></script>
 		<script src="controllers/PostDetailsController.js"></script>
 	</body>
