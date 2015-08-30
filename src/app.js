@@ -1,5 +1,7 @@
 angular.module('kargo', ['ui.router'])
 
+	.constant('POSTS_URL', '/posts')
+
 	.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
 
 		////////////////

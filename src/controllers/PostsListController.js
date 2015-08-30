@@ -4,7 +4,11 @@ angular.module('kargo')
 
 		var postsList = this;
 
-		postsList.posts = PostsService.getPosts();
+		PostsService.getAll().then(function (data) {
+
+			postsList.data = data;
+
+		});
 
 		postsList.showDetails = function (postId) {
 

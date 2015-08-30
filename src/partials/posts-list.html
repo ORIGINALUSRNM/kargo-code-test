@@ -1,6 +1,10 @@
-<ul>
-	<li class="well" ng-repeat="post in postsList.posts">
-		<em>{{post.id}} - {{post.title}}</em>
-		<button class="btn btn-primary" ng-click="postsList.showDetails(post.id)">details</button>
-	</li>
-</ul>
+<div class="container-fluid">
+	<div class="row" ng-repeat="post in postsList.data.posts">
+		<div class="col-md-8">
+			<em>{{post.id}} - {{post.title}}</em>
+		</div>
+		<div class="col-md-4">
+			<button class="btn btn-primary" ng-click="postsList.showDetails(post.id)">details</button>
+		</div>
+	</div>
+</div>
