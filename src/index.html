@@ -2,11 +2,22 @@
 <html ng-app="kargo">
 	<head>
 		<title>Kargo Code Test</title>
-		<!-- <base href="/src/index.html" /> -->
 		<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css" />
 		<link rel="stylesheet" href="resources/main.css" />
 	</head>
 	<body>
+		<header class="kargo-main-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<h1 class="kargo-logo">Kargo Code Test</h1>
+					</div>
+					<div class="col-md-6 kargo-coded-by">
+						<h2>coded by Jason Hornbuckle</h2>
+					</div>
+				</div>
+			</div>
+		</header>
 		<section class="kargo-main" ui-view></section>
 		<script src="angular/angular.js"></script>
 		<script src="angular-ui-router/build/angular-ui-router.js"></script>

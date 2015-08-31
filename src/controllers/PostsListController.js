@@ -16,4 +16,5 @@ angular.module('kargo')
 		postsList.showDetails = function (postId) {
 			$state.go('postDetail', { postId: postId });
 		};
+		
 	}]);

@@ -5,8 +5,11 @@ angular.module('kargo')
 		 function ($scope, $stateParams, PostsService, TrackerService) {
 		
 			$scope.data = {
+				fromDate: '2015-01-01',
+				toDate: '2015-03-01',
 				trackers: []
 			};
+
 
 			PostsService.get($stateParams.postId)
 				.then(
@@ -20,12 +23,12 @@ angular.module('kargo')
 					}
 				);
 
-			TrackerService.getHits()
+			TrackerService.getHits($scope.data.fromDate, $scope.data.toDate)
 				.then(
 					function (response) {
 
 						$scope.data.trackers = response.data;
-						
+
 					}, 
 					function () {
 

@@ -1,15 +1,24 @@
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<div>userId: {{ post.userId }}</div>
-			<div>id: {{ post.id }}</div>
-			<div>title: {{ post.title }}</div>
-			<body>title: {{ post.title }}</body>
+<div class="kargo-post-details">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="page-header">
+				  <h3>Post details for post: {{ post.id }}</h3>
+				</div>
+				<ul class="list-group">
+				  <li class="list-group-item">id: {{ post.id }}</li>
+				  <li class="list-group-item">userId: {{ post.userId }}</li>
+				  <li class="list-group-item">title: {{ post.title }}</li>
+				</ul>
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<pre>{{ data.trackers | json }}</pre>
+		<div class="row">
+			<div class="col-md-12">
+				<h3>
+					<span class="label label-info">Tracker hit data from {{data.fromDate}} to {{data.toDate}}</span>
+				</h3>
+				<pre>{{ data.trackers | json }}</pre>
+			</div>
 		</div>
 	</div>
 </div>

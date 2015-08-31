@@ -6,12 +6,6 @@ angular.module('kargo', ['ui.router'])
 
 	.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
 
-		////////////////
-		//set up HTML5 mode in order to use push state for modern browsers so users do not have to see
-		//unsightly hashes.
-		///////////////
-		//$locationProvider.html5Mode(true);
-
 		$urlRouterProvider.otherwise('/');
 
 		$stateProvider

@@ -1,4 +1,22 @@
 .kargo-main {
-	width:800px;
 	margin:0px auto;
+	width:800px;
+}
+
+.kargo-main-header {
+	background-color:black;
+	padding: 40px 20px;
+}
+
+.kargo-logo {
+	color:#fff;
+	text-transform:uppercase;
+}
+
+.kargo-coded-by {
+	color:red;
+}
+
+.kargo-posts-list {
+	padding:40px;
 }
