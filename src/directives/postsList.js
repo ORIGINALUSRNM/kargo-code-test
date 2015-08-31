@@ -6,6 +6,8 @@ angular.module('kargo')
 			controller: 'PostsListController',
 			controllerAs: 'postsList',
 			templateUrl: 'partials/posts-list.html',
-			scope: {}//creates isolate scope, completely encapsulating directive
+			scope: {
+				onItemClick: '&'
+			}
 		};
 	});

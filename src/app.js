@@ -18,4 +18,5 @@ angular.module('kargo', ['ui.router'])
 				controller: 'PostDetailsController',
 				templateUrl: 'partials/post-details.html'
 			});
+
 	});

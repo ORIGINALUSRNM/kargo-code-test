@@ -13,8 +13,10 @@ angular.module('kargo')
 			}
 		);
 
+		//this navigation is coupled with the directive and should really be moved out
+		//into a separate navigation handler that handles it for the whole app.
 		postsList.showDetails = function (postId) {
 			$state.go('postDetail', { postId: postId });
 		};
-		
+
 	}]);
