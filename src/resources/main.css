@@ -20,3 +20,21 @@
 .kargo-posts-list {
 	padding:40px;
 }
+
+.kargo-posts-list .list-table-cont {
+	position:relative;
+}
+
+.kargo-posts-list .fa-spinner {
+	color:#666;
+	display:block;
+	font-size:100px;
+    margin: 0px auto;
+    text-align:center;
+    width: auto;
+}
+
+/* utilities */
+.relative-container {
+	position:relative;
+}

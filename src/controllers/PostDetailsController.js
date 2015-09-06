@@ -10,12 +10,16 @@ angular.module('kargo')
 				trackers: []
 			};
 
+			$scope.postLoading = true;
+			$scope.trackerLoading = true;
+
 
 			PostsService.get($stateParams.postId)
 				.then(
 					function (response) {
 
 						$scope.post = response.data;
+						$scope.postLoading = false;
 
 					}, 
 					function (error) {
@@ -28,6 +32,7 @@ angular.module('kargo')
 					function (response) {
 
 						$scope.data.trackers = response.data;
+						$scope.trackerLoading = false;
 
 					}, 
 					function () {

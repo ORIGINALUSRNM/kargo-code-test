@@ -35,7 +35,11 @@ angular.module('kargo')
 				.then(
 					function (response) {
 						data.posts = response.data;
-						posts.resolve(data);
+						setTimeout(function () {
+								posts.resolve(data);
+
+						}, 3000);
+						
 					}, 
 					function (response) {
 						///////////////

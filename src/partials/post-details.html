@@ -2,22 +2,26 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="page-header">
-				  <h3>Post details for post: {{ post.id }}</h3>
+				<h3>Post details for post: {{ post.id }}</h3>
+				<div class="relative-container">
+					<div loading-image loading="postLoading" font-size="50px"></div>
+					<ul class="list-group" ng-hide="postLoading">
+					  <li class="list-group-item">id: {{ post.id }}</li>
+					  <li class="list-group-item">userId: {{ post.userId }}</li>
+					  <li class="list-group-item">title: {{ post.title }}</li>
+					</ul>
 				</div>
-				<ul class="list-group">
-				  <li class="list-group-item">id: {{ post.id }}</li>
-				  <li class="list-group-item">userId: {{ post.userId }}</li>
-				  <li class="list-group-item">title: {{ post.title }}</li>
-				</ul>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<h3>
-					<span class="label label-info">Tracker hit data from {{data.fromDate}} to {{data.toDate}}</span>
-				</h3>
-				<pre>{{ data.trackers | json }}</pre>
+				<div loading-image loading="trackerLoading" font-size="50px"></div>
+				<div ng-hide="trackerLoading">
+					<h3>
+						<span class="label label-info">Tracker hit data from {{data.fromDate}} to {{data.toDate}}</span>
+					</h3>
+					<pre>{{ data.trackers | json }}</pre>
+				</div>
 			</div>
 		</div>
 	</div>
