@@ -15,6 +15,19 @@ angular.module('kargo')
 
 		};
 
+		var ISOStringToDate = function (ISO_String) {
+			var day, month, splitISO, year;
+
+			splitISO = ISO_String.split('-');
+
+			year = parseInt(splitISO[0]);
+			//months are zero-based when creating with separate arguments in Date constructor
+			month = parseInt(splitISO[1]) - 1;
+			day = parseInt(splitISO[2]);
+
+			return new Date(year, month, day);
+		};
+
 		var formatData = function (data) {
 
 			var day, 
@@ -30,12 +43,11 @@ angular.module('kargo')
 			
 			//evaluate length of data each time because data may grow if additional tracker data needs to be inserted.
 			for(i; i < data.length - 1; i++){
-				//day = data[i].date;
-				day = new Date(data[i].date);
+				day = ISOStringToDate(data[i].date);
 				nextDay = new Date(day);
 				nextDay.setDate(nextDay.getDate() + 1);
-				nextAvailable = new Date(data[i + 1].date);
-
+				nextAvailable = ISOStringToDate(data[i + 1].date);
+				
 				if(nextDay.toISOString() != nextAvailable.toISOString()){
 					//use isoDate to generate temporary unique front-end id for this data set.
 					data.splice(i + 1, 0, {
@@ -75,6 +87,7 @@ angular.module('kargo')
 		};
 
 		return {
+			formatData: formatData,
 			getHits: getHits
 		};
 
