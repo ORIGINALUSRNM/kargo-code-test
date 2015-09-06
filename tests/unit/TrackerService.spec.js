@@ -19,7 +19,8 @@ describe('TrackerService', function () {
 			{ from: '2015-01-01', to: '2015-01-02' },
 			{ from: '2015-01-01', to: '2015-01-03' },
 			{ from: '2015-01-01', to: '2015-01-29' },
-			{ from: '2014-01-01', to: '2015-01-10'}
+			{ from: '2014-01-01', to: '2015-01-10'},
+			{ from: '2001-01-01', to: '2015-01-10'}
 		];	
 	}));
 
@@ -118,7 +119,7 @@ describe('TrackerService', function () {
     	});
 
     	it('should add missing data points when dates have different years', function () {
-    		var data, result;
+    		var data, data2, result, result2;
 
     		data = [
     			{
@@ -133,8 +134,25 @@ describe('TrackerService', function () {
 				}
     		];
 
+    		data2 = [
+    			{
+					id: 1,
+					hits: 9271,
+					date: testDates[4].from
+				},
+				{
+					id: 7,
+					hits: 4125,
+					date: testDates[4].to
+				}
+    		];
+
     		result = TrackerService.formatData(data);
+    		result2 = TrackerService.formatData(data2);
+
     		expect(result.length).toBe(375);
+    		expect(result2.length).toBe(5123);
+
     	});
     });
 
