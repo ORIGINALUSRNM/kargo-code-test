@@ -17,7 +17,8 @@
     "angular-mocks": "^1.4.5",
     "angular-ui-router": "^0.2.15",
     "bootstrap": "^3.3.5",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "font-awesome": "^4.4.0"
   },
   "devDependencies": {
     "jasmine-core": "^2.3.4",
