@@ -1,4 +1,4 @@
-angular.module('kargo', ['ui.router'])
+angular.module('kargo', ['ui.router', 'ui.bootstrap'])
 
 	.constant('POSTS_URL', 'http://jsonplaceholder.typicode.com/posts')
 

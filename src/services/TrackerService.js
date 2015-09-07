@@ -11,6 +11,14 @@ angular.module('kargo')
 			var fromDate = from || defaultFrom;
 			var toDate = to || defaultTo;
 
+			if(typeof fromDate === 'object'){
+				fromDate = fromDate.toISOString().split('T')[0];
+			}
+
+			if(typeof toDate === 'object'){
+				toDate = toDate.toISOString().split('T')[0];
+			}
+
 			return urlTemplate({ fromDate: fromDate, toDate: toDate });
 
 		};
@@ -29,7 +37,6 @@ angular.module('kargo')
 		};
 
 		var formatData = function (data) {
-
 			var day, 
 				i = 0,
 				isoDate,
@@ -63,7 +70,6 @@ angular.module('kargo')
 		};
 
 		var getHits = function (fromDate, toDate) {
-
 			var hits = $q.defer();
 
 			$http.get(_getUrl(fromDate, toDate))
@@ -83,12 +89,12 @@ angular.module('kargo')
 				);
 
 			return hits.promise;
-
 		};
 
 		return {
 			formatData: formatData,
-			getHits: getHits
+			getHits: getHits,
+			ISOStringToDate: ISOStringToDate
 		};
 
 	}]);
