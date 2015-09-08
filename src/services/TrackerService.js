@@ -7,7 +7,6 @@ angular.module('kargo')
 		var defaultTo = '2015-03-01';
 
 		var _getUrl = function (from, to) {
-
 			var fromDate = from || defaultFrom;
 			var toDate = to || defaultTo;
 
@@ -20,7 +19,6 @@ angular.module('kargo')
 			}
 
 			return urlTemplate({ fromDate: fromDate, toDate: toDate });
-
 		};
 
 		var ISOStringToDate = function (ISO_String) {

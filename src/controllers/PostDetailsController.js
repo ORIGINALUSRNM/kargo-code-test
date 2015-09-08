@@ -3,7 +3,7 @@ angular.module('kargo')
 	.controller('PostDetailsController', 
 		['$scope', '$stateParams', 'PostsService', 'TrackerService',  
 		 function ($scope, $stateParams, PostsService, TrackerService) {
-		
+
 			var getTrackerData = function () {
 				TrackerService.getHits($scope.data.fromDate, $scope.data.toDate)
 					.then(
@@ -62,10 +62,8 @@ angular.module('kargo')
 			PostsService.get($stateParams.postId)
 				.then(
 					function (response) {
-
 						$scope.post = response.data;
 						$scope.postLoading = false;
-
 					}, 
 					function (error) {
 
