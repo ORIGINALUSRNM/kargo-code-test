@@ -78,8 +78,7 @@ angular.module('kargo')
 							data: formatData(res.data.data)
 						};
 
-						setTimeout(function () {hits.resolve(response);}, 3000);
-
+						hits.resolve(response);
 					}, 
 					function (error) {
 						hits.reject(error);
